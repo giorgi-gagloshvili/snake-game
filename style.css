@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.grid {
+  border: 1px solid #ccc;
+  width: 500px;
+  height: 500px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.grid div {
+  border: 1px solid #ccc;
+}
+
+.point {
+  background: red;
+}
+
+.snake {
+  background: purple;
+}
