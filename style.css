@@ -5,15 +5,15 @@
 }
 
 .grid {
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   width: 500px;
   height: 500px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(20, 1fr);
 }
 
 .grid div {
-  border: 1px solid #ccc;
+  border: 1px solid #eee;
 }
 
 .point {

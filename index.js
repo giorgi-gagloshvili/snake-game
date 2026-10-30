@@ -10,7 +10,7 @@ let score = 0;
 const result = document.getElementById("result");
 
 function createGrid() {
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 400; i++) {
     const cell = document.createElement("DIV");
     cell.classList.add("cell");
     grid.append(cell);
@@ -66,19 +66,19 @@ document.addEventListener("keydown", (event) => {
 function MoveTheSnake() {
   switch (direction) {
     case "up":
-      if (snakeArray[snakeArray.length - 1] < 10 || direction === "down") {
+      if (snakeArray[snakeArray.length - 1] < 20 || direction === "down") {
         endGame = true;
         return;
       }
       direction = "up";
-      snakeArray.push(snakeArray[snakeArray.length - 1] - 10);
+      snakeArray.push(snakeArray[snakeArray.length - 1] - 20);
       snakeArray.shift();
       renderSnake();
       console.log(snakeArray);
       break;
     case "right":
       if (
-        snakeArray[snakeArray.length - 1] % 10 === 9 ||
+        snakeArray[snakeArray.length - 1] % 20 === 19 ||
         direction === "left"
       ) {
         endGame = true;
@@ -91,19 +91,19 @@ function MoveTheSnake() {
       console.log(snakeArray);
       break;
     case "down":
-      if (snakeArray[snakeArray.length - 1] > 89 || direction === "up") {
+      if (snakeArray[snakeArray.length - 1] > 379 || direction === "up") {
         endGame = true;
         return;
       }
       direction = "down";
-      snakeArray.push(snakeArray[snakeArray.length - 1] + 10);
+      snakeArray.push(snakeArray[snakeArray.length - 1] + 20);
       snakeArray.shift();
       renderSnake();
       console.log(snakeArray);
       break;
     case "left":
       if (
-        snakeArray[snakeArray.length - 1] % 10 === 0 ||
+        snakeArray[snakeArray.length - 1] % 20 === 0 ||
         direction === "right"
       ) {
         endGame = true;
@@ -122,6 +122,7 @@ function MoveTheSnake() {
     score++;
     result.innerHTML = score;
     renderPoint();
+    snakeArray.unshift(15);
   }
 
   if (endGame) {
